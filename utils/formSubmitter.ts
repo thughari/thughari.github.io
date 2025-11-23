@@ -21,6 +21,9 @@ export const submitContactForm = async (
   formBody.append("name", formData.name);
   formBody.append("email", formData.email);
   formBody.append("message", formData.message);
+  if (formData.phone) {
+    formBody.append("phone", formData.phone);
+  }
 
   try {
     const response = await fetch(googleScriptUrl, {

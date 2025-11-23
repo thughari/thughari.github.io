@@ -8,6 +8,7 @@ type ContactFlowState =
   | "idle"
   | "collecting_name"
   | "collecting_email"
+  | "collecting_phone"
   | "collecting_message"
   | "sending";
 
@@ -38,6 +39,14 @@ export const useGeminiChat = () => {
 
       case "collecting_email":
         setContactData((prev) => ({ ...prev, email: userInput }));
+        setContactFlowState("collecting_phone");
+        addBotMessage("Optional: Enter your mobile number, or type 'skip' to continue.");
+        break;
+
+      case "collecting_phone":
+        if (userInput.trim().toLowerCase() !== "skip" && userInput.trim() !== "") {
+          setContactData((prev) => ({ ...prev, phone: userInput }));
+        }
         setContactFlowState("collecting_message");
         addBotMessage("Perfect. And what's the message you'd like to send?");
         break;

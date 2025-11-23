@@ -68,6 +68,20 @@ const Contact: React.FC = () => {
             placeholder="your.email@example.com"
           />
         </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-slate-300 mb-2">Phone (optional)</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            value={formData.phone ?? ''}
+            onChange={handleChange}
+            className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:ring-2 focus:ring-spidey-red transition-all"
+            placeholder="+91-XXXXXXXXXX"
+          />
+        </div>
+        
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">Message</label>
           <textarea

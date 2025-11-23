@@ -7,6 +7,7 @@ export const useContactForm = () => {
     name: "",
     email: "",
     message: "",
+    phone: "",
   });
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -28,7 +29,7 @@ export const useContactForm = () => {
     try {
       await submitContactForm(formData);
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" }); // Reset form
+      setFormData({ name: "", email: "", message: "", phone: "" }); // Reset form
 
       setTimeout(() => setStatus("idle"), 10000); // Reset status after 10 seconds
     } catch (error) {
