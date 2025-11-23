@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { educationData } from '../constants.ts';
 
 const About: React.FC = () => {
-  const profileImageUrl = "./assets/hari.png";
+  const profileImageUrl = "./public/hari.png";
 
   return (
     <div className="max-w-6xl mx-auto">

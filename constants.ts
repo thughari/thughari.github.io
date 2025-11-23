@@ -48,7 +48,7 @@ export const projectsData: Project[] = [
     title: "RandomChat - Real-time Video Chat",
     description: "A peer-to-peer video chat application built from the ground up, leveraging modern Java features. It uses WebRTC for direct browser-to-browser video streaming and Java 21's Virtual Threads for a highly scalable signaling server.",
     tech: ["Java 21", "Spring Boot", "WebRTC", "WebSockets", "Virtual Threads", "JavaScript"],
-    imageUrl: "./assets/randomchat.png",
+    imageUrl: "./public/randomchat.png",
     demoUrl: "https://randomchat-hfta.onrender.com/",
     githubUrl: "https://github.com/thughari/RandomChat"
   },
@@ -56,7 +56,7 @@ export const projectsData: Project[] = [
     title: "CollabEditor - Real-time Collaborative Editor",
     description: "An online collaborative text editor that allows multiple users to edit a document simultaneously. Built with a Spring Boot backend using WebSockets for instant synchronization of changes across all clients.",
     tech: ["Java", "Spring Boot", "WebSockets", "Maven", "TypeScript", "Angular"],
-    imageUrl: "./assets/collabeditor.png",
+    imageUrl: "./public/collabeditor.png",
     demoUrl: "https://thughari.github.io/Collaborative-Editor-UI/editor/hari",
     githubUrl: "https://github.com/thughari/CollabEditor"
   },
@@ -64,7 +64,7 @@ export const projectsData: Project[] = [
     title: "AI-Powered Mental Health App",
     description: "A full-stack mental wellness application featuring a microservices backend and a real-time AI chatbot. Integrated Ollama & LLaMA 3 with RAG to provide personalized, context-aware support.",
     tech: ["Java", "Spring Boot", "Angular", "Microservices", "MongoDB", "Ollama", "LLaMA 3"],
-    imageUrl: "./assets/mental-health.png",
+    imageUrl: "./public/mental-health.png",
     demoUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7313487684994285568?compact=1",
     githubUrl: "https://github.com/thughari/Mental-Health-App-Backend"
   },
@@ -72,7 +72,7 @@ export const projectsData: Project[] = [
     title: "National Scholarship Portal",
     description: "A comprehensive scholarship management system with multi-role access for students, institutes, and administrators. The backend is containerized with Docker for easy deployment and scalability.",
     tech: ["Java", "Spring Boot", "Angular", "MongoDB", "Docker", "REST APIs"],
-    imageUrl: "./assets/nsp.png",
+    imageUrl: "./public/nsp.png",
     demoUrl: "https://thughari.github.io/NationalScholarshipPortal-FrontEnd/#/",
     githubUrl: "https://github.com/thughari/NationalScholarshipPortal-FrontEnd"
   }, 
@@ -80,7 +80,7 @@ export const projectsData: Project[] = [
     title: "Music Player Web App",
     description: "A sleek and responsive music player web application that allows users to play, pause, and skip tracks. Built with HTML, CSS, and JavaScript.",
     tech: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "./assets/image.png",
+    imageUrl: "./public/image.png",
     demoUrl: "https://thughari.github.io/music-player/",
     githubUrl: "https://github.com/thughari/music-player"
   }
