@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContactForm } from '../hooks/useContactForm.ts';
-import { SendIcon, CheckCircleIcon, AlertTriangleIcon } from './Icons.tsx';
+import { SendIcon, CheckCircleIcon, AlertTriangleIcon, MediumIcon } from './Icons.tsx';
+import { GitHubIcon, LinkedInIcon, LeetCodeIcon, CodeforcesIcon, MailIcon, TwitterIcon, InstagramIcon, GoogleIcon } from './Icons.tsx';
+import { personalInfo } from '../constants.ts';
 
 const Contact: React.FC = () => {
   const { formData, status, errorMessage, handleChange, handleSubmit } = useContactForm();
@@ -100,6 +102,39 @@ const Contact: React.FC = () => {
           </motion.button>
         </div>
       </motion.form>
+
+      <div className="mt-8 flex flex-col items-center gap-4">
+        <p className="text-sm text-slate-400 mb-2">Or reach out via socials</p>
+        <div className="flex items-center gap-4">
+          <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-300 hover:text-spidey-red">
+            <GitHubIcon className="w-7 h-7" />
+          </a>
+          <a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-300 hover:text-spidey-red">
+            <LinkedInIcon className="w-7 h-7" />
+          </a>
+          <a href={personalInfo.socials.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="text-slate-300 hover:text-spidey-red">
+            <LeetCodeIcon className="w-7 h-7" />
+          </a>
+          <a href={personalInfo.socials.codeforces} target="_blank" rel="noopener noreferrer" aria-label="Codeforces" className="text-slate-300 hover:text-spidey-red">
+            <CodeforcesIcon className="w-7 h-7" />
+          </a>
+          <a href={`mailto:${personalInfo.email}`} aria-label="Email" className="text-slate-300 hover:text-spidey-red">
+            <MailIcon className="w-7 h-7" />
+          </a>
+          <a href={personalInfo.socials.medium} target="_blank" rel="noopener noreferrer" aria-label="Medium" className="text-slate-300 hover:text-spidey-red">
+            <MediumIcon className="w-7 h-7" />
+          </a>
+          <a href={personalInfo.socials.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-slate-300 hover:text-spidey-red">
+            <TwitterIcon className="w-7 h-7" />
+          </a>
+          <a href={personalInfo.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-300 hover:text-spidey-red">
+            <InstagramIcon className="w-7 h-7" />
+          </a>
+          <a href={personalInfo.socials.googleDev} target="_blank" rel="noopener noreferrer" aria-label="GoogleDev" className="text-slate-300 hover:text-spidey-red">
+            <GoogleIcon className="w-7 h-7" />
+          </a>
+        </div>
+      </div>
 
       <AnimatePresence>
         {isSuccess && (

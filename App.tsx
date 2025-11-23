@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const MotionSection = ({ children, id, className }: { children: React.ReactNode, id: string, className?: string }) => (
     <motion.section
       id={id}
-      className={`py-24 px-4 sm:px-6 lg:px-8 overflow-hidden ${className || ''}`}
+      className={`py-12 px-4 sm:px-6 lg:px-8 overflow-hidden ${className || ''}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -32,7 +32,7 @@ const App: React.FC = () => {
         <Header />
         <main className="container mx-auto">
           <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-4">
-             <Hero />
+            <Hero />
           </section>
           <MotionSection id="about">
             <About />

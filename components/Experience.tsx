@@ -9,7 +9,6 @@ const Experience: React.FC = () => {
         Professional <span className="gradient-text">Experience</span>
       </h2>
       <div className="relative">
-        {/* Timeline line */}
         <div className="absolute left-4 md:left-1/2 w-0.5 h-full bg-slate-700 -translate-x-1/2"></div>
 
         {experienceData.map((item, index) => (
@@ -35,7 +34,6 @@ const Experience: React.FC = () => {
                 </div>
               </div>
             </div>
-            {/* Timeline dot */}
             <div className="absolute top-1 left-4 md:left-1/2 w-4 h-4 bg-spidey-red rounded-full -translate-x-1/2 border-4 border-slate-800"></div>
           </motion.div>
         ))}

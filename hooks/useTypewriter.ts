@@ -1,13 +1,16 @@
+import { useState, useEffect } from "react";
 
-import { useState, useEffect } from 'react';
-
-export const useTypewriter = (text: string, speed: number = 50, delay: number = 1000) => {
-  const [displayText, setDisplayText] = useState('');
+export const useTypewriter = (
+  text: string,
+  speed: number = 50,
+  delay: number = 1000
+) => {
+  const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
 
   useEffect(() => {
-    let typingTimeout: NodeJS.Timeout;
+    let typingTimeout: ReturnType<typeof setTimeout>;
 
     const handleTyping = () => {
       const fullText = text;
@@ -19,7 +22,7 @@ export const useTypewriter = (text: string, speed: number = 50, delay: number = 
 
       if (!isDeleting && displayText === fullText) {
         typingTimeout = setTimeout(() => setIsDeleting(true), delay);
-      } else if (isDeleting && displayText === '') {
+      } else if (isDeleting && displayText === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
       }

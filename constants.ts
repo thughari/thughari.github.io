@@ -1,17 +1,20 @@
 import { ExperienceItem, Project, SkillCategory, OpenSourceItem, GitHubStat, TopLanguage, Certification } from './types.ts';
-import { HeartIcon, GitBranchIcon, CodeIcon, ServerIcon, DatabaseIcon, CloudIcon, ToolIcon, LanguageIcon, StarIcon, RepoIcon, CommitIcon } from './components/Icons.tsx';
+import { HeartIcon, GitBranchIcon, CodeIcon, ServerIcon, DatabaseIcon, ToolIcon, StarIcon, RepoIcon, CommitIcon, AIIcon, GoogleCloudIcon, CloudIcon } from './components/Icons.tsx';
 
 export const personalInfo = {
   name: "Hari Thatikonda",
-  title: "Full Stack Software Engineer",
+  title: "Full Stack Developer",
   email: "haribabutatikonda3@gmail.com",
   phone: "+91-90328 05118",
   socials: {
     github: "https://github.com/thughari",
     linkedin: "https://www.linkedin.com/in/hari-thatikonda/",
-    dev: "https://g.dev/hariT",
+    googleDev: "https://g.dev/hariT",
     leetcode: "https://leetcode.com/u/thughari/",
-    codeforces: "https://codeforces.com/profile/thughari"
+    codeforces: "https://codeforces.com/profile/hari3",
+    twitter: "https://twitter.com/thughari",
+    instagram: "https://www.instagram.com/thug_hari/",
+    medium: "https://medium.com/@hari3"
   },
   handle: "thughari"
 };
@@ -45,38 +48,48 @@ export const projectsData: Project[] = [
     title: "RandomChat - Real-time Video Chat",
     description: "A peer-to-peer video chat application built from the ground up, leveraging modern Java features. It uses WebRTC for direct browser-to-browser video streaming and Java 21's Virtual Threads for a highly scalable signaling server.",
     tech: ["Java 21", "Spring Boot", "WebRTC", "WebSockets", "Virtual Threads", "JavaScript"],
-    imageUrl: "https://images.unsplash.com/photo-1559704293-9551264de150?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageUrl: "./assets/randomchat.png",
+    demoUrl: "https://randomchat-hfta.onrender.com/",
     githubUrl: "https://github.com/thughari/RandomChat"
   },
   {
     title: "CollabEditor - Real-time Collaborative Editor",
     description: "An online collaborative text editor that allows multiple users to edit a document simultaneously. Built with a Spring Boot backend using WebSockets for instant synchronization of changes across all clients.",
     tech: ["Java", "Spring Boot", "WebSockets", "Maven", "TypeScript", "Angular"],
-    imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageUrl: "./assets/collabeditor.png",
+    demoUrl: "https://thughari.github.io/Collaborative-Editor-UI/editor/hari",
     githubUrl: "https://github.com/thughari/CollabEditor"
   },
   {
     title: "AI-Powered Mental Health App",
     description: "A full-stack mental wellness application featuring a microservices backend and a real-time AI chatbot. Integrated Ollama & LLaMA 3 with RAG to provide personalized, context-aware support.",
     tech: ["Java", "Spring Boot", "Angular", "Microservices", "MongoDB", "Ollama", "LLaMA 3"],
-    imageUrl: "https://images.unsplash.com/photo-1584441405886-bc91be61e56a?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    demoUrl: "https://mental-health-app-frontend.vercel.app/",
-    githubUrl: "https://github.com/thughari/Mental-Health-App-frontend"
+    imageUrl: "./assets/mental-health.png",
+    demoUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7313487684994285568?compact=1",
+    githubUrl: "https://github.com/thughari/Mental-Health-App-Backend"
   },
   {
     title: "National Scholarship Portal",
     description: "A comprehensive scholarship management system with multi-role access for students, institutes, and administrators. The backend is containerized with Docker for easy deployment and scalability.",
     tech: ["Java", "Spring Boot", "Angular", "MongoDB", "Docker", "REST APIs"],
-    imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    demoUrl: "https://scholarship-portal-frontend.vercel.app/",
-    githubUrl: "https://github.com/thughari/scholarship-portal-frontend"
+    imageUrl: "./assets/nsp.png",
+    demoUrl: "https://thughari.github.io/NationalScholarshipPortal-FrontEnd/#/",
+    githubUrl: "https://github.com/thughari/NationalScholarshipPortal-FrontEnd"
+  }, 
+  {
+    title: "Music Player Web App",
+    description: "A sleek and responsive music player web application that allows users to play, pause, and skip tracks. Built with HTML, CSS, and JavaScript.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "./assets/image.png",
+    demoUrl: "https://thughari.github.io/music-player/",
+    githubUrl: "https://github.com/thughari/music-player"
   }
 ];
 
 export const openSourceData: OpenSourceItem[] = [
     {
-        title: "Hacktoberfest Contributor",
-        description: "Actively participated in Hacktoberfest, successfully completing multiple pull requests and contributing to a variety of open-source projects. Passionate about giving back to the community and collaborating with developers worldwide.",
+        title: "Hacktoberfest Supercontributor",
+        description: "Achieved Supercontributor status in Hacktoberfest by completing numerous high-quality pull requests and actively contributing to open-source projects. Passionate about giving back and collaborating with developers worldwide.",
         icon: HeartIcon
     },
     {
@@ -89,8 +102,8 @@ export const openSourceData: OpenSourceItem[] = [
 export const skillsData: SkillCategory[] = [
   {
     name: "Languages",
-    skills: ["Java (21)", "Python", "SQL", "JavaScript", "TypeScript"],
-    icon: LanguageIcon
+    skills: ["Java (21)", "Python", "SQL", "JavaScript", "TypeScript", "C"],
+    icon: CodeIcon
   },
   {
     name: "Backend",
@@ -99,7 +112,7 @@ export const skillsData: SkillCategory[] = [
   },
   {
     name: "Frontend",
-    skills: ["Angular", "React", "HTML/CSS", "TailwindCSS", "Bootstrap"],
+    skills: ["Angular", "HTML/CSS", "TailwindCSS", "Bootstrap"],
     icon: CodeIcon
   },
   {
@@ -114,32 +127,32 @@ export const skillsData: SkillCategory[] = [
   },
   {
     name: "Tools & Concepts",
-    skills: ["Git", "GitHub", "Postman", "Swagger", "JIRA", "JWT", "Agile", "Design Patterns", "RAG"],
+    skills: ["Git", "GitHub", "Postman", "Swagger", "JIRA", "JWT", "Agile", "Design Patterns", "RAG", "Veracode",  "Fortify", "SonarQube", "Burp Suite"],
     icon: ToolIcon
   }
 ];
 
 export const certificationsData: Certification[] = [
   {
-    name: "Oracle Certified Professional, Java SE 17 Developer",
-    issuer: "Oracle",
-    date: "Issued Jan 2024",
-    credentialUrl: "#",
-    icon: LanguageIcon,
+    name: "Azure AI Engineer Associate",
+    issuer: "Microsoft",
+    date: "Issued Dec 2024",
+    credentialUrl: "https://learn.microsoft.com/en-us/users/harithatikonda/credentials/ba767343eef28046",
+    icon: AIIcon,
   },
   {
     name: "Associate Cloud Engineer",
     issuer: "Google Cloud",
-    date: "Issued Mar 2023",
-    credentialUrl: "#",
-    icon: CloudIcon,
+    date: "Issued Feb 2025",
+    credentialUrl: "https://www.credly.com/badges/e37732c2-6766-4b6a-b42a-a25aa6b24fe9/public_url",
+    icon: GoogleCloudIcon,
   },
 ];
 
 export const githubStatsData: GitHubStat[] = [
-    { icon: RepoIcon, value: "60+", label: "Repositories" },
-    { icon: CommitIcon, value: "500+", label: "Commits" },
-    { icon: StarIcon, value: "30+", label: "Stars" },
+    { icon: RepoIcon, value: "61", label: "Repositories" },
+    { icon: CommitIcon, value: "786", label: "Commits" },
+    { icon: StarIcon, value: "30", label: "Stars" },
 ];
 
 export const topLanguagesData: TopLanguage[] = [
@@ -149,7 +162,7 @@ export const topLanguagesData: TopLanguage[] = [
     { name: "Python", percentage: 10, color: "#306998" },
 ];
 
-export const chatbotSystemInstruction = `You are 'Hari's AI Twin', his friendly neighborhood AI assistant for his personal portfolio. Your goal is to provide concise and accurate information about Hari to potential employers and collaborators, based *only* on the context provided below. Your tone should be helpful, a little witty, and professional. **Always use Markdown for formatting**, such as bolding for titles (\`**Title:**\`) and bullet points (\`* item\`) for lists. Do not invent or infer any information.
+export const chatbotSystemInstruction = `You are '${personalInfo.name}'s AI Twin', his friendly neighborhood AI assistant for his personal portfolio. Your goal is to provide concise and accurate information about Hari to potential employers and collaborators, based *only* on the context provided below. Your tone should be helpful, a little witty, and professional. **Always use Markdown for formatting**, such as bolding for titles (\`**Title:**\`) and bullet points (\`* item\`) for lists. Do not invent or infer any information.
 
 **Special Instruction:** If a user expresses a desire to send a message, contact Hari, or ask a question directly to him, you MUST respond with **only** the special token \`[START_CONTACT_FLOW]\` and nothing else. The application will then take over to collect the user's message.
 

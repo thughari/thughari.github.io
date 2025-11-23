@@ -5,9 +5,20 @@ import { openSourceData } from '../constants.ts';
 const OpenSource: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto">
-      <h2 className="text-4xl font-bold text-center mb-16">
+      <h2 className="text-4xl font-bold text-center mb-6">
         Open Source & <span className="gradient-text">Community</span>
       </h2>
+
+      <div className="flex justify-center mb-8">
+        <a href="https://holopin.io/@thughari" target="_blank" rel="noopener noreferrer" aria-label="View Holopin profile">
+          <img
+            src="https://holopin.me/thughari"
+            alt="An image of @thughari's Holopin badges, which is a link to view their full Holopin profile"
+            className="inline-block"
+          />
+        </a>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {openSourceData.map((item, index) => (
           <motion.div

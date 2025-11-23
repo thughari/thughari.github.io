@@ -1,37 +1,45 @@
+import { ContactFormData } from "../types.ts";
 
-import { ContactFormData } from '../types.ts';
+export const submitContactForm = async (
+  formData: ContactFormData
+): Promise<string> => {
+  const encodedScriptUrl = new Uint8Array([
+    104, 116, 116, 112, 115, 58, 47, 47, 115, 99, 114, 105, 112, 116, 46, 103,
+    111, 111, 103, 108, 101, 46, 99, 111, 109, 47, 109, 97, 99, 114, 111, 115,
+    47, 115, 47, 65, 75, 102, 121, 99, 98, 121, 57, 83, 45, 78, 97, 78, 111,
+    101, 97, 73, 84, 98, 86, 122, 88, 65, 109, 82, 109, 48, 98, 120, 85, 104,
+    98, 72, 104, 84, 78, 67, 104, 120, 73, 97, 82, 97, 73, 109, 99, 107, 111,
+    90, 74, 121, 111, 116, 114, 48, 78, 55, 105, 79, 90, 85, 111, 74, 72, 82,
+    110, 77, 71, 69, 108, 49, 71, 88, 81, 47, 101, 120, 101, 99,
+  ]);
 
-export const submitContactForm = async (formData: ContactFormData): Promise<string> => {
-  // IMPORTANT: Replace this placeholder with your own Google Apps Script URL.
-  // It is highly recommended to store this in an environment variable.
-  const googleScriptUrl = "https://script.google.com/macros/s/AKfycby9S-NaNoeaITbVzXAmRm0bxUhbHhTNChxIaRaImckoZJyotr0N7iOZUoJHRnMGEl1GXQ/exec";
+  const td = new TextDecoder();
 
-  // if (googleScriptUrl === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
-  //   const errorMessage = "The form is not configured correctly. Please contact the site owner.";
-  //   console.error("Google Apps Script URL is not configured. Please replace the placeholder in utils/formSubmitter.ts.");
-  //   return Promise.reject(new Error(errorMessage));
-  // }
+  const googleScriptUrl = td.decode(encodedScriptUrl);
 
   const formBody = new FormData();
-  formBody.append('name', formData.name);
-  formBody.append('email', formData.email);
-  formBody.append('message', formData.message);
+  formBody.append("name", formData.name);
+  formBody.append("email", formData.email);
+  formBody.append("message", formData.message);
 
   try {
     const response = await fetch(googleScriptUrl, {
-      method: 'POST',
+      method: "POST",
       body: formBody,
     });
 
     if (!response.ok) {
-      throw new Error('Network response was not ok.');
+      throw new Error("Network response was not ok.");
     }
 
     const resultText = await response.text();
     return resultText;
   } catch (error) {
-    console.error('Error submitting form:', error);
-    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred.';
-    return Promise.reject(new Error(`Something went wrong. Please try again later. ${errorMessage}`));
+    console.error("Error submitting form:", error);
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred.";
+    return Promise.reject(
+      new Error(`Something went wrong. Please try again later. ${errorMessage}`)
+    );
   }
 };
