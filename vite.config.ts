@@ -2,7 +2,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig( {
-  base: '/Portfolio/',
+  base: '/thughari.github.io/',
   define: {
   },
   resolve: {
