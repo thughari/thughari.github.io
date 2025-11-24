@@ -6,6 +6,7 @@ export const personalInfo = {
   title: "Full Stack Developer",
   email: "haribabutatikonda3@gmail.com",
   phone: "+91-90328 05118",
+  resume: "HariThatikonda.pdf",
   socials: {
     github: "https://github.com/thughari",
     linkedin: "https://www.linkedin.com/in/hari-thatikonda/",

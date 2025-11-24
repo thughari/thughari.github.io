@@ -44,34 +44,57 @@ const Hero: React.FC = () => {
         Your friendly neighborhood software engineer, building robust backend systems and dynamic user interfaces. Passionate about open source and exploring the frontiers of technology.
       </motion.p>
       <motion.div
-        className="mt-10 flex flex-col sm:flex-row items-center gap-6"
+        className="mt-10 flex flex-col items-center gap-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
-        <motion.button
-          onClick={scrollToProjects}
-          className="bg-spidey-red text-white font-semibold px-8 py-3 rounded-lg shadow-lg shadow-red-600/30 transition-all duration-300 hover:bg-red-500 hover:shadow-xl hover:shadow-red-500/40"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          View My Work
-        </motion.button>
-        <div className="flex items-center space-x-6">
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <motion.button
+            onClick={scrollToProjects}
+            className="bg-spidey-red text-white font-semibold px-8 py-3 rounded-lg shadow-lg shadow-red-600/30 transition-all duration-300 hover:bg-red-500 hover:shadow-xl hover:shadow-red-500/40"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View My Work
+          </motion.button>
+
+          <div className="flex items-center gap-3">
+            <a
+              href={personalInfo.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-3 bg-slate-800/60 text-slate-100 rounded-lg border border-slate-700 hover:bg-slate-700 transition"
+              aria-label="View Resume"
+            >
+              View Resume
+            </a>
+            <a
+              href={personalInfo.resume}
+              download="Hari Thatikonda.pdf"
+              className="inline-flex items-center px-4 py-3 bg-spidey-red text-white rounded-lg hover:bg-red-500 transition"
+              aria-label="Download Resume"
+            >
+              Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-4 flex items-center space-x-5">
           <motion.a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" variants={iconVariants} whileHover="hover" whileTap="tap" aria-label="GitHub Profile">
-            <GitHubIcon className="w-8 h-8 text-slate-400 transition-colors" />
+            <GitHubIcon className="w-7 h-7 text-slate-400 transition-colors" />
           </motion.a>
           <motion.a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" variants={iconVariants} whileHover="hover" whileTap="tap" aria-label="LinkedIn Profile">
-            <LinkedInIcon className="w-8 h-8 text-slate-400 transition-colors" />
+            <LinkedInIcon className="w-7 h-7 text-slate-400 transition-colors" />
           </motion.a>
           <motion.a href={personalInfo.socials.leetcode} target="_blank" rel="noopener noreferrer" variants={iconVariants} whileHover="hover" whileTap="tap" aria-label="LeetCode Profile">
-            <LeetCodeIcon className="w-8 h-8 text-slate-400 transition-colors" />
+            <LeetCodeIcon className="w-7 h-7 text-slate-400 transition-colors" />
           </motion.a>
           <motion.a href={personalInfo.socials.codeforces} target="_blank" rel="noopener noreferrer" variants={iconVariants} whileHover="hover" whileTap="tap" aria-label="Codeforces Profile">
-            <CodeforcesIcon className="w-8 h-8 text-slate-400 transition-colors" />
+            <CodeforcesIcon className="w-7 h-7 text-slate-400 transition-colors" />
           </motion.a>
           <motion.a href={`mailto:${personalInfo.email}`} variants={iconVariants} whileHover="hover" whileTap="tap" aria-label="Send Email">
-            <MailIcon className="w-8 h-8 text-slate-400 transition-colors" />
+            <MailIcon className="w-7 h-7 text-slate-400 transition-colors" />
           </motion.a>
         </div>
       </motion.div>
