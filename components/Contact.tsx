@@ -13,9 +13,9 @@ const Contact: React.FC = () => {
   const isError = status === 'error';
 
   return (
-    <div className="max-w-2xl mx-auto text-center">
+    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center overflow-hidden">
       <motion.h2
-        className="text-4xl font-bold mb-4"
+        className="text-3xl sm:text-4xl font-bold mb-4"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
         Send Me a <span className="gradient-text">Message</span>
       </motion.h2>
       <motion.p
-        className="text-lg text-slate-400 mb-12"
+        className="text-base sm:text-lg text-slate-400 mb-8 sm:mb-12 px-2"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
           <motion.button
             type="submit"
             disabled={isLoading}
-            className="inline-flex items-center justify-center bg-spidey-red text-white font-semibold px-8 py-3 rounded-lg shadow-lg shadow-red-600/30 transition-all duration-300 hover:bg-red-500 hover:shadow-xl hover:shadow-red-500/40 disabled:bg-slate-500 disabled:cursor-not-allowed"
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-spidey-red text-white font-semibold px-6 py-3 rounded-lg shadow-lg shadow-red-600/30 transition-all duration-300 hover:bg-red-500 hover:shadow-xl hover:shadow-red-500/40 disabled:bg-slate-500 disabled:cursor-not-allowed"
             whileHover={{ scale: isLoading ? 1 : 1.05 }}
             whileTap={{ scale: isLoading ? 1 : 0.95 }}
           >
@@ -117,36 +117,19 @@ const Contact: React.FC = () => {
         </div>
       </motion.form>
 
-      <div className="mt-8 flex flex-col items-center gap-4">
+      <div className="mt-10 flex flex-col items-center gap-4">
         <p className="text-sm text-slate-400 mb-2">Or reach out via socials</p>
-        <div className="flex items-center gap-4">
-          <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-300 hover:text-spidey-red">
-            <GitHubIcon className="w-7 h-7" />
-          </a>
-          <a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-300 hover:text-spidey-red">
-            <LinkedInIcon className="w-7 h-7" />
-          </a>
-          <a href={personalInfo.socials.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="text-slate-300 hover:text-spidey-red">
-            <LeetCodeIcon className="w-7 h-7" />
-          </a>
-          <a href={personalInfo.socials.codeforces} target="_blank" rel="noopener noreferrer" aria-label="Codeforces" className="text-slate-300 hover:text-spidey-red">
-            <CodeforcesIcon className="w-7 h-7" />
-          </a>
-          <a href={`mailto:${personalInfo.email}`} aria-label="Email" className="text-slate-300 hover:text-spidey-red">
-            <MailIcon className="w-7 h-7" />
-          </a>
-          <a href={personalInfo.socials.medium} target="_blank" rel="noopener noreferrer" aria-label="Medium" className="text-slate-300 hover:text-spidey-red">
-            <MediumIcon className="w-7 h-7" />
-          </a>
-          <a href={personalInfo.socials.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-slate-300 hover:text-spidey-red">
-            <TwitterIcon className="w-7 h-7" />
-          </a>
-          <a href={personalInfo.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-300 hover:text-spidey-red">
-            <InstagramIcon className="w-7 h-7" />
-          </a>
-          <a href={personalInfo.socials.googleDev} target="_blank" rel="noopener noreferrer" aria-label="GoogleDev" className="text-slate-300 hover:text-spidey-red">
-            <GoogleIcon className="w-7 h-7" />
-          </a>
+        <div className="flex flex-wrap justify-center items-center gap-4">
+          {/* Social Icons */}
+          <a href={personalInfo.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-slate-300 hover:text-spidey-red"><GitHubIcon className="w-7 h-7" /></a>
+          <a href={personalInfo.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-300 hover:text-spidey-red"><LinkedInIcon className="w-7 h-7" /></a>
+          <a href={personalInfo.socials.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="text-slate-300 hover:text-spidey-red"><LeetCodeIcon className="w-7 h-7" /></a>
+          <a href={personalInfo.socials.codeforces} target="_blank" rel="noopener noreferrer" aria-label="Codeforces" className="text-slate-300 hover:text-spidey-red"><CodeforcesIcon className="w-7 h-7" /></a>
+          <a href={`mailto:${personalInfo.email}`} aria-label="Email" className="text-slate-300 hover:text-spidey-red"><MailIcon className="w-7 h-7" /></a>
+          <a href={personalInfo.socials.medium} target="_blank" rel="noopener noreferrer" aria-label="Medium" className="text-slate-300 hover:text-spidey-red"><MediumIcon className="w-7 h-7" /></a>
+          <a href={personalInfo.socials.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-slate-300 hover:text-spidey-red"><TwitterIcon className="w-7 h-7" /></a>
+          <a href={personalInfo.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-slate-300 hover:text-spidey-red"><InstagramIcon className="w-7 h-7" /></a>
+          <a href={personalInfo.socials.googleDev} target="_blank" rel="noopener noreferrer" aria-label="GoogleDev" className="text-slate-300 hover:text-spidey-red"><GoogleIcon className="w-7 h-7" /></a>
         </div>
       </div>
 
@@ -177,8 +160,8 @@ const Contact: React.FC = () => {
         )}
       </AnimatePresence>
 
-      <footer className="mt-20 pt-8 border-t border-slate-800">
-        <p className="text-slate-500">
+      <footer className="mt-16 pt-8 border-t border-slate-800">
+        <p className="text-slate-500 text-sm">
           Designed & Built by your friendly neighborhood software engineer, Hari Thatikonda.
         </p>
       </footer>
