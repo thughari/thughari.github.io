@@ -26,12 +26,10 @@ const Projects: React.FC = () => {
 
   useEffect(() => {
     let timer: number | undefined;
-    // prevent background page scrolling while modal is open
     if (selected) {
       document.body.style.overflow = 'hidden';
       setIframeLoaded(false);
       setIframeMaybeBlocked(false);
-      // if iframe doesn't call onLoad within 1500ms, show a helpful note
       timer = window.setTimeout(() => setIframeMaybeBlocked(true), 1500);
     } else {
       document.body.style.overflow = '';
@@ -57,6 +55,10 @@ const Projects: React.FC = () => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const getPreviewUrl = (project: Project) => {
+    return project.demoUrl || project.githubUrl || project.githubUrls?.frontend || project.githubUrls?.backend;
+  };
+
   return (
     <>
       <motion.h2
@@ -65,6 +67,7 @@ const Projects: React.FC = () => {
       >
         Featured <span className="gradient-text">Projects</span>
       </motion.h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projectsData.map((project, index) => (
           <motion.div
@@ -91,15 +94,45 @@ const Projects: React.FC = () => {
                 </button>
               </div>
             </div>
+
             <div className="p-6 flex-grow flex flex-col">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-2xl font-bold text-slate-100 group-hover:text-spidey-red transition-colors duration-300">{project.title}</h3>
-                <div className="flex items-center space-x-4 z-10">
-                  {project.githubUrl && (
-                    <a onClick={(e) => { e.stopPropagation(); openInNewTab(project.githubUrl); }} className="text-slate-400 hover:text-spidey-red transition-colors cursor-pointer" aria-label="Open GitHub repo">
-                      <GitHubIcon />
-                    </a>
+
+                <div className="flex items-center space-x-3 z-10">
+                  {project.githubUrls ? (
+                    <>
+                      {project.githubUrls.frontend && (
+                        <a
+                          onClick={(e) => { e.stopPropagation(); openInNewTab(project.githubUrls?.frontend); }}
+                          className="text-slate-400 hover:text-spidey-red transition-colors cursor-pointer flex items-center gap-1"
+                          title="Frontend Repository"
+                        >
+                          <GitHubIcon /> <span className="text-[10px] font-bold">FE</span>
+                        </a>
+                      )}
+                      {project.githubUrls.backend && (
+                        <a
+                          onClick={(e) => { e.stopPropagation(); openInNewTab(project.githubUrls?.backend); }}
+                          className="text-slate-400 hover:text-spidey-red transition-colors cursor-pointer flex items-center gap-1"
+                          title="Backend Repository"
+                        >
+                          <GitHubIcon /> <span className="text-[10px] font-bold">BE</span>
+                        </a>
+                      )}
+                    </>
+                  ) : (
+                    project.githubUrl && (
+                      <a
+                        onClick={(e) => { e.stopPropagation(); openInNewTab(project.githubUrl); }}
+                        className="text-slate-400 hover:text-spidey-red transition-colors cursor-pointer"
+                        aria-label="Open GitHub repo"
+                      >
+                        <GitHubIcon />
+                      </a>
+                    )
                   )}
+
                   {project.demoUrl && (
                     <a onClick={(e) => { e.stopPropagation(); openInNewTab(project.demoUrl); }} className="text-slate-400 hover:text-spidey-red transition-colors cursor-pointer" aria-label="Open demo">
                       <ExternalLinkIcon />
@@ -107,7 +140,9 @@ const Projects: React.FC = () => {
                   )}
                 </div>
               </div>
+
               <p className="text-slate-300 mb-4 flex-grow">{project.description}</p>
+
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech, i) => (
                   <span key={i} className="bg-slate-700 text-red-300 text-xs font-medium px-2.5 py-1 rounded-full">
@@ -120,7 +155,6 @@ const Projects: React.FC = () => {
         ))}
       </div>
 
-      {/* Preview Modal */}
       {selected && (
         <motion.div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -141,31 +175,69 @@ const Projects: React.FC = () => {
             aria-modal="true"
             aria-label={`Preview ${selected.title}`}
           >
-            <header className="flex items-center justify-between p-4 border-b border-slate-700 sticky top-0 bg-slate-900 z-10">
-              <div>
+
+
+            <header className="flex flex-col md:flex-row md:items-center justify-between p-4 border-b border-slate-700 sticky top-0 bg-slate-900 z-10 gap-4">
+
+              <div className="w-full md:w-auto">
                 <h3 className="text-lg font-semibold text-slate-100">{selected.title}</h3>
-                <p className="text-sm text-slate-400">{selected.tech.join(', ')}</p>
+                <p className="text-sm text-slate-400 line-clamp-1">{selected.tech.join(', ')}</p>
               </div>
-              <div className="flex items-center gap-3">
+
+              <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
                 {selected.demoUrl && (
-                  <button onClick={() => openInNewTab(selected.demoUrl)} className="px-3 py-2 text-sm bg-spidey-red text-white rounded-md">
+                  <button
+                    onClick={() => openInNewTab(selected.demoUrl)}
+                    className="flex-1 md:flex-none px-3 py-2 text-sm bg-spidey-red text-white rounded-md text-center whitespace-nowrap"
+                  >
                     Open Project
                   </button>
                 )}
-                {selected.githubUrl && (
-                  <button onClick={() => openInNewTab(selected.githubUrl)} className="px-3 py-2 text-sm bg-slate-700 text-slate-200 rounded-md">
-                    View Repo
-                  </button>
+
+                {selected.githubUrls ? (
+                  <>
+                    {selected.githubUrls.frontend && (
+                      <button
+                        onClick={() => openInNewTab(selected.githubUrls?.frontend)}
+                        className="flex-1 md:flex-none px-3 py-2 text-sm bg-slate-700 text-slate-200 rounded-md hover:bg-slate-600 text-center whitespace-nowrap"
+                      >
+                        Frontend
+                      </button>
+                    )}
+                    {selected.githubUrls.backend && (
+                      <button
+                        onClick={() => openInNewTab(selected.githubUrls?.backend)}
+                        className="flex-1 md:flex-none px-3 py-2 text-sm bg-slate-700 text-slate-200 rounded-md hover:bg-slate-600 text-center whitespace-nowrap"
+                      >
+                        Backend
+                      </button>
+                    )}
+                  </>
+                ) : (
+                  selected.githubUrl && (
+                    <button
+                      onClick={() => openInNewTab(selected.githubUrl)}
+                      className="flex-1 md:flex-none px-3 py-2 text-sm bg-slate-700 text-slate-200 rounded-md hover:bg-slate-600 text-center whitespace-nowrap"
+                    >
+                      Repo
+                    </button>
+                  )
                 )}
-                <button onClick={closePreview} className="px-3 py-2 text-sm text-slate-300">Close</button>
+
+                <button
+                  onClick={closePreview}
+                  className="px-3 py-2 text-sm text-slate-300 hover:text-white ml-auto md:ml-0"
+                >
+                  Close
+                </button>
               </div>
             </header>
 
             <div className="h-full">
-              {(selected.demoUrl || selected.githubUrl) ? (
+              {getPreviewUrl(selected) ? (
                 <iframe
                   title={`Preview - ${selected.title}`}
-                  src={selected.demoUrl || selected.githubUrl}
+                  src={getPreviewUrl(selected)}
                   className="w-full h-full bg-white"
                   onLoad={() => { setIframeLoaded(true); setIframeMaybeBlocked(false); }}
                   sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-presentation"

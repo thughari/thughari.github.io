@@ -46,7 +46,19 @@ export const educationData = {
 
 export const projectsData: Project[] = [
   {
-    title: "RandomChat - Real-time Video Chat",
+    title: "CarbonScope - Emissions Analytics Dashboard",
+    description: "an end-to-end emissions analytics platform with Chart.js visualizations, Gemini-powered data analysis and web insights, deployed on Google Cloud Run for scalability.",
+    tech: ["Java", "Spring Boot", "Angular", "Chart.js", "Google Cloud Run", "Gemini API", "Docker"],
+    imageUrl: "./images/carbon-scope.png",
+    demoUrl: "https://thughari.github.io/carbon-scope/",
+    githubUrl: "https://github.com/thughari/carbon-scope",
+    githubUrls: {
+      frontend: "https://github.com/thughari/carbon-scope",
+      backend: "https://github.com/thughari/carbonscope"
+    }
+  },
+  {
+    title: "RandomChat - Peer To Peer Video Chat",
     description: "A peer-to-peer video chat application built from the ground up, leveraging modern Java features. It uses WebRTC for direct browser-to-browser video streaming and Java 21's Virtual Threads for a highly scalable signaling server.",
     tech: ["Java 21", "Spring Boot", "WebRTC", "WebSockets", "Virtual Threads", "JavaScript"],
     imageUrl: "./images/randomchat.png",
@@ -54,12 +66,16 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/thughari/RandomChat"
   },
   {
-    title: "CollabEditor - Real-time Collaborative Editor",
+    title: "CollabEditor - Online Editor like Google Docs",
     description: "An online collaborative text editor that allows multiple users to edit a document simultaneously. Built with a Spring Boot backend using WebSockets for instant synchronization of changes across all clients.",
     tech: ["Java", "Spring Boot", "WebSockets", "Maven", "TypeScript", "Angular"],
     imageUrl: "./images/collabeditor.png",
     demoUrl: "https://thughari.github.io/Collaborative-Editor-UI/editor/hari",
-    githubUrl: "https://github.com/thughari/CollabEditor"
+    githubUrl: "https://github.com/thughari/CollabEditor",
+    githubUrls: {
+      frontend: "https://github.com/thughari/Collaborative-Editor-UI",
+      backend: "https://github.com/thughari/CollabEditor"
+    }
   },
   {
     title: "AI-Powered Mental Health App",
@@ -67,7 +83,11 @@ export const projectsData: Project[] = [
     tech: ["Java", "Spring Boot", "Angular", "Microservices", "MongoDB", "Ollama", "LLaMA 3"],
     imageUrl: "./images/mental-health.png",
     demoUrl: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7313487684994285568?compact=1",
-    githubUrl: "https://github.com/thughari/Mental-Health-App-Backend"
+    githubUrl: "https://github.com/thughari/Mental-Health-App-Backend",
+    githubUrls: {
+      frontend: "https://github.com/thughari/Mental-Health-App",
+      backend: "https://github.com/thughari/Mental-Health-App-Backend"
+    }
   },
   {
     title: "National Scholarship Portal",
@@ -75,7 +95,11 @@ export const projectsData: Project[] = [
     tech: ["Java", "Spring Boot", "Angular", "MongoDB", "Docker", "REST APIs"],
     imageUrl: "./images/nsp.png",
     demoUrl: "https://thughari.github.io/NationalScholarshipPortal-FrontEnd/#/",
-    githubUrl: "https://github.com/thughari/NationalScholarshipPortal-FrontEnd"
+    githubUrl: "https://github.com/thughari/NationalScholarshipPortal-FrontEnd",
+    githubUrls: {
+      frontend: "https://github.com/thughari/NationalScholarshipPortal-FrontEnd",
+      backend: "https://github.com/thughari/National_Scholarship_Portal_Backend"
+    }
   }, 
   {
     title: "Music Player Web App",
@@ -95,7 +119,7 @@ export const openSourceData: OpenSourceItem[] = [
     },
     {
         title: "Open Source Enthusiast",
-        description: "Engaged with the open-source ecosystem by contributing to, forking, and learning from influential projects like Spring AI, Kubernetes, and First Contributions. Always exploring new tools and frameworks to stay at the cutting edge.",
+        description: "Engaged with the open-source ecosystem by contributing to, forking, and learning from influential projects like Spring, Apache, GSoC and First Contributions. Always exploring new tools and frameworks to stay at the cutting edge.",
         icon: GitBranchIcon
     }
 ];
@@ -151,7 +175,7 @@ export const certificationsData: Certification[] = [
 ];
 
 export const githubStatsData: GitHubStat[] = [
-    { icon: RepoIcon, value: "61", label: "Repositories" },
+    { icon: RepoIcon, value: "66", label: "Repositories" },
     { icon: CommitIcon, value: "786", label: "Commits" },
     { icon: StarIcon, value: "30", label: "Stars" },
 ];

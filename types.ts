@@ -13,6 +13,10 @@ export interface Project {
   imageUrl: string;
   demoUrl?: string;
   githubUrl?: string;
+  githubUrls?: {
+    frontend?: string;
+    backend?: string;
+  };
 }
 
 export interface SkillCategory {
