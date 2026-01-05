@@ -63,6 +63,9 @@ const Projects: React.FC = () => {
     <>
       <motion.h2
         className="text-4xl font-bold text-center mb-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
         variants={cardVariants}
       >
         Featured <span className="gradient-text">Projects</span>
@@ -73,6 +76,9 @@ const Projects: React.FC = () => {
           <motion.div
             key={index}
             className="glass-card rounded-xl overflow-hidden flex flex-col group cursor-pointer"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }} 
             style={{ transformStyle: 'preserve-3d' }}
             variants={cardVariants}
             whileHover={{

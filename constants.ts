@@ -46,12 +46,22 @@ export const educationData = {
 
 export const projectsData: Project[] = [
   {
+    title: "JobTrackerPro - Manage all your job applications in one place",
+    description: "A robust full-stack dashboard to visualize and manage the job search pipeline. Features a hybrid OAuth2/JWT security system, multi-threaded analytics for real-time D3.js charts, and atomic profile updates using Cloudflare R2 storage. Includes AI-powered email parsing for automated job entry.",
+    tech: ["Java 21", "Spring Boot 3", "Angular 17 (Signals)", "TailwindCSS", "D3.js", "Cloudflare R2", "PostgreSQL", "Google Gemini API", "Docker", "Google Cloud Run", "OAuth2", "JWT"],
+    imageUrl: "./images/jobtrackerpro.png",
+    demoUrl: "https://thughari.github.io/JobTrackerPro-UI/",
+    githubUrls: {
+      frontend: "https://github.com/thughari/JobTrackerPro-UI",
+      backend: "https://github.com/thughari/JobTrackerPro"
+    }
+  },
+  {
     title: "CarbonScope - Emissions Analytics Dashboard",
     description: "an end-to-end emissions analytics platform with Chart.js visualizations, Gemini-powered data analysis and web insights, deployed on Google Cloud Run for scalability.",
     tech: ["Java", "Spring Boot", "Angular", "Chart.js", "Google Cloud Run", "Gemini API", "Docker"],
     imageUrl: "./images/carbon-scope.png",
     demoUrl: "https://thughari.github.io/carbon-scope/",
-    githubUrl: "https://github.com/thughari/carbon-scope",
     githubUrls: {
       frontend: "https://github.com/thughari/carbon-scope",
       backend: "https://github.com/thughari/carbonscope"
@@ -175,9 +185,9 @@ export const certificationsData: Certification[] = [
 ];
 
 export const githubStatsData: GitHubStat[] = [
-    { icon: RepoIcon, value: "66", label: "Repositories" },
-    { icon: CommitIcon, value: "786", label: "Commits" },
-    { icon: StarIcon, value: "30", label: "Stars" },
+    { icon: RepoIcon, value: "67", label: "Repositories" },
+    { icon: CommitIcon, value: "1000+", label: "Commits" },
+    { icon: StarIcon, value: "30+", label: "Stars" },
 ];
 
 export const topLanguagesData: TopLanguage[] = [
