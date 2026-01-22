@@ -50,11 +50,8 @@ export const projectsData: Project[] = [
     description: "A robust full-stack dashboard to visualize and manage the job search pipeline. Features a hybrid OAuth2/JWT security system, multi-threaded analytics for real-time D3.js charts, and atomic profile updates using Cloudflare R2 storage. Includes AI-powered email parsing for automated job entry.",
     tech: ["Java 21", "Spring Boot 3", "Angular 17 (Signals)", "TailwindCSS", "D3.js", "Cloudflare R2", "PostgreSQL", "Google Gemini API", "Docker", "Google Cloud Run", "OAuth2", "JWT"],
     imageUrl: "./images/jobtrackerpro.png",
-    demoUrl: "https://thughari.github.io/JobTrackerPro-UI/",
-    githubUrls: {
-      frontend: "https://github.com/thughari/JobTrackerPro-UI",
-      backend: "https://github.com/thughari/JobTrackerPro"
-    }
+    demoUrl: "https://thughari.github.io/JobTrackerPro/",
+    githubUrl: "https://github.com/thughari/JobTrackerPro"
   },
   {
     title: "CarbonScope - Emissions Analytics Dashboard",
