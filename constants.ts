@@ -112,9 +112,17 @@ export const projectsData: Project[] = [
     title: "Music Player Web App",
     description: "A sleek and responsive music player web application that allows users to play, pause, and skip tracks. Built with HTML, CSS, and JavaScript.",
     tech: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "./images/image.png",
+    imageUrl: "./images/music-player.png",
     demoUrl: "https://thughari.github.io/music-player/",
     githubUrl: "https://github.com/thughari/music-player"
+  },
+  {
+    title: "fastkart - E-commerce Website",
+    description: "A sleek and responsive e-commerce website built with modern web technologies to provide a seamless shopping experience. Features include product listings, shopping cart functionality.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "./images/fastkart.png",
+    demoUrl: "https://thughari.github.io/fastkart-multipurpose-ecommerce-html-template/",
+    githubUrl: "https://github.com/thughari/fastkart-multipurpose-ecommerce-html-template"
   }
 ];
 
