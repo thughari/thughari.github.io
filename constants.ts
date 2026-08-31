@@ -34,6 +34,15 @@ export const experienceData: ExperienceItem[] = [
       "Engineered secure APIs with JWT-based authentication, achieving 100% compliance in security audits.",
       "Accelerated release cycles by streamlining CI/CD pipelines with Jenkins and GitHub, cutting manual deployment efforts by 70%."
     ]
+  },
+  {
+    role: "Full Stack Developer Specialist",
+    company: "Google Operations Center(GOC)",
+    period: "Aug 2026 – Present",
+    location: "Hyderabad, India",
+    points: [
+      "Just started here!! will update soon!"
+    ]
   }
 ];
 
