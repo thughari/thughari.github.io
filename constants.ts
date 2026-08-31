@@ -24,7 +24,7 @@ export const experienceData: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Tata Consultancy Services",
-    period: "Aug 2022 – Present",
+    period: "Aug 2022 – Aug 2026",
     location: "Hyderabad, India",
     points: [
       "Boosted financial reporting performance by 40% for a Verizon tool by optimizing backend logic.",
