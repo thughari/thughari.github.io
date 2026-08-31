@@ -166,7 +166,7 @@ export const skillsData: SkillCategory[] = [
   },
   {
     name: "Databases",
-    skills: ["MySQL", "MongoDB"],
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "Oracle DB", "SQL Server", "Database Design", "Query Optimization"],
     icon: DatabaseIcon
   },
   {
@@ -178,7 +178,7 @@ export const skillsData: SkillCategory[] = [
   },
   {
     name: "DevOps & Cloud",
-    skills: ["Docker", "Jenkins", "Google Cloud Platform (GCP)"],
+    skills: ["Docker", "Jenkins", "CI/CD Pipelines", "GitHub Actions", "Google Cloud Platform (GCP)", "Cloud Deployments", "Linux", "Containerization", "Monitoring", "Environment Management"],
     icon: CloudIcon
   },
   {
