@@ -170,6 +170,13 @@ export const skillsData: SkillCategory[] = [
     icon: DatabaseIcon
   },
   {
+    name: "AI & GenAI",
+    skills: [
+      "Generative AI", "LLM Integration", "RAG", "AI Agents", "LangChain", "LangGraph", "Vector Databases", "Semantic Search", "Prompt Engineering", "LLM APIs", "Ollama"
+    ],
+    icon: AIIcon
+  },
+  {
     name: "DevOps & Cloud",
     skills: ["Docker", "Jenkins", "Google Cloud Platform (GCP)"],
     icon: CloudIcon
