@@ -13,7 +13,7 @@ export const personalInfo = {
     googleDev: "https://g.dev/hariT",
     leetcode: "https://leetcode.com/u/thughari/",
     codeforces: "https://codeforces.com/profile/hari3",
-    twitter: "https://twitter.com/thughari",
+    twitter: "https://twitter.com/thughari3",
     instagram: "https://www.instagram.com/thug_hari/",
     medium: "https://medium.com/@hari3"
   },
