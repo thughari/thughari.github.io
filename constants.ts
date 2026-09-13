@@ -13,14 +13,23 @@ export const personalInfo = {
     googleDev: "https://g.dev/hariT",
     leetcode: "https://leetcode.com/u/thughari/",
     codeforces: "https://codeforces.com/profile/hari3",
-    twitter: "https://twitter.com/thughari3",
     instagram: "https://www.instagram.com/thug_hari/",
+    twitter: "https://twitter.com/thughari3",
     medium: "https://medium.com/@hari3"
   },
   handle: "thughari"
 };
 
 export const experienceData: ExperienceItem[] = [
+  {
+    role: "Full Stack Developer Specialist",
+    company: "Google Operations Center(GOC)",
+    period: "Aug 2026 – Present",
+    location: "Hyderabad, India",
+    points: [
+      "Just started here!! will update soon!"
+    ]
+  },
   {
     role: "Software Engineer",
     company: "Tata Consultancy Services",
@@ -33,15 +42,6 @@ export const experienceData: ExperienceItem[] = [
       "Improved API response times by 20% using modern Java features like Streams and Lambdas.",
       "Engineered secure APIs with JWT-based authentication, achieving 100% compliance in security audits.",
       "Accelerated release cycles by streamlining CI/CD pipelines with Jenkins and GitHub, cutting manual deployment efforts by 70%."
-    ]
-  },
-  {
-    role: "Full Stack Developer Specialist",
-    company: "Google Operations Center(GOC)",
-    period: "Aug 2026 – Present",
-    location: "Hyderabad, India",
-    points: [
-      "Just started here!! will update soon!"
     ]
   }
 ];
